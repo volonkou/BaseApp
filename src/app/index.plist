@@ -1,31 +1,48 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>items</key>
-    <array>
-        <dict>
-            <key>assets</key>
-            <array>
-                <dict>
-                    <key>kind</key>
-                    <string>software-package</string>
-                    <key>url</key>
-                    <string>https://www.gzbuyercamp.cn/static/ewms.ipa</string> 
-                </dict>
-            </array>
-            <key>metadata</key>
-            <dict>
-                <key>bundle-identifier</key>
-                <string>org.reactjs.native.example.ewms</string>
-                <key>bundle-version</key>
-                <string>1.1</string>
-                <key>kind</key>
-                <string>software</string>
-                <key>title</key>
-                <string>ewms</string>
-            </dict>
-        </dict>
-    </array>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>assets</key>
+			<array>
+				<dict>
+					<key>kind</key>
+					<string>software-package</string>
+					<key>url</key>
+					<string>https://www.gzbuyercamp.cn/static/ewms.ipa</string>
+				</dict>
+				<dict>
+					<key>kind</key>
+					<string>full-size-image</string>
+					<key>needs-shine</key>
+					<true/>
+					<key>url</key>
+					<string>https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594888538864&di=f5013abb216fb885b898ba301f17bcce&imgtype=0&src=http%3A%2F%2Fimage.8844it.com%2Fb2c-image%2Fb2c-good%2F20155161182938.png</string>
+				</dict>
+				<dict>
+					<key>kind</key>
+					<string>display-image</string>
+					<key>needs-shine</key>
+					<true/>
+					<key>url</key>
+					<string>https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594888538864&di=f5013abb216fb885b898ba301f17bcce&imgtype=0&src=http%3A%2F%2Fimage.8844it.com%2Fb2c-image%2Fb2c-good%2F20155161182938.png</string>
+				</dict>
+			</array>
+			<key>metadata</key>
+			<dict>
+				<key>bundle-identifier</key>
+				<string>org.reactjs.native.example.ewms</string>
+				<key>bundle-version</key>
+				<string>1.1</string>
+				<key>kind</key>
+				<string>software</string>
+				<key>title</key>
+				<string>ewms App download</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>
