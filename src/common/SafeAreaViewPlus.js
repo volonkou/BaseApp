@@ -1,5 +1,5 @@
 import React, {Component,} from 'react';
-import {DeviceInfo, SafeAreaView, StyleSheet, View, ViewPropTypes} from 'react-native';
+import {DeviceInfo,StyleSheet, View, ViewPropTypes} from 'react-native';
 import {PropTypes} from 'prop-types';
 
 export default class SafeAreaViewPlus extends Component {
@@ -7,7 +7,6 @@ export default class SafeAreaViewPlus extends Component {
         ...ViewPropTypes,
         topColor: PropTypes.string,
         bottomColor: PropTypes.string,
-        enablePlus: PropTypes.bool,
         topInset: PropTypes.bool,
         bottomInset: PropTypes.bool,
 
@@ -15,7 +14,6 @@ export default class SafeAreaViewPlus extends Component {
     static defaultProps = {
         topColor: 'transparent',
         bottomColor: '#f8f8f8',
-        enablePlus: true,
         topInset: true,
         bottomInset: false,
     };
@@ -29,13 +27,9 @@ export default class SafeAreaViewPlus extends Component {
         </View>;
     }
 
-    genSafeAreaView() {
-        return <SafeAreaView style={[styles.container, this.props.style]} {...this.props}>
-            {this.props.children}
-        </SafeAreaView>
-    }
 
     getTopArea(topColor, topInset) {
+        console.log(!DeviceInfo.isIPhoneX_deprecated,!topInset)
         return !DeviceInfo.isIPhoneX_deprecated || !topInset ? null
             : <View style={[styles.topArea, {backgroundColor: topColor}]}/>;
     }
@@ -46,8 +40,7 @@ export default class SafeAreaViewPlus extends Component {
     }
 
     render() {
-        const {enablePlus} = this.props;
-        return enablePlus ? this.genSafeAreaViewPlus() : this.genSafeAreaView();
+        return this.genSafeAreaViewPlus() 
     }
 }
 const styles = StyleSheet.create({

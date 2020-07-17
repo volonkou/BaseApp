@@ -24,8 +24,8 @@ class RootPage extends Component {
 
     render() {
         NavigationUtil.navigation = this.props.navigation;
-
-        return <SafeAreaViewPlus>
+        const {theme} = this.props;
+        return <SafeAreaViewPlus topColor={theme.themeColor}>
             <TabNavigator/>
             {this.renderThemeView()}
         </SafeAreaViewPlus>

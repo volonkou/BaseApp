@@ -34,7 +34,7 @@ class ThemePage extends Component {
         const List = []
         let data = Object.keys(ThemeFlags)
         for (let i in data) {
-            List.push(<View key={i} style={{ flexDirection: 'row' }}>
+            List.push(<View key={i}>
                 {this.getThemeItem(data[i])}
             </View>)
         }

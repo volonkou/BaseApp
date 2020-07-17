@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
-import SafeAreaViewPlus from "../common/SafeAreaViewPlus";
 import NavigationUtil from "../navigator/navigationUtil";
 import actions from "../action"
 
@@ -11,8 +10,7 @@ class MyPage extends Component {
     }
     render() {
         NavigationUtil.navigation = this.props.navigation;
-        return <SafeAreaViewPlus>
-            <View style={[styles.container,{backgroundColor:this.props.theme.themeColor}]}>
+        return <View style={[styles.container,{backgroundColor:this.props.theme.themeColor}]}>
                 <TouchableHighlight onPress={() => {
                     const { onShowCustomThemeView } = this.props
                     onShowCustomThemeView(true)
@@ -20,7 +18,6 @@ class MyPage extends Component {
                     <Text style={{color:"#fff"}}>Change Color</Text>
                 </TouchableHighlight>
             </View>
-        </SafeAreaViewPlus>
     }
 }
 
