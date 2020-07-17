@@ -73,9 +73,8 @@ export default class App extends Component{
 }
 ```
 
-2.下载主体代码文件（CSDN下载完成直接解压放到根目录就好，github上）
-（1）CSDN 下载：[CSDN](https://download.csdn.net/download/koufulong/12628355)
-（2）GitHub下载：[GitHub](https://github.com/volonkou/BaseApp)
+2.下载主体代码文件
+GitHub下载：[GitHub](https://github.com/volonkou/BaseApp)
 
 3.齐活，开始跑一下（记得在根目录运行,很多种运行命令，就不一一列举了，老规矩，想了解，看文档🙃）
 
@@ -97,7 +96,7 @@ yarn
   
 
 四、项目效果（我的tab，点击Change Color，可以换肤）
-![图片](https://img-blog.csdnimg.cn/2020071711073819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tvdWZ1bG9uZw==,size_16,color_FFFFFF,t_70,#pic_center=375x800)
+![图片](https://img-blog.csdnimg.cn/20200717153508778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tvdWZ1bG9uZw==,size_16,color_FFFFFF,t_70,#pic_center=375x800)
 
-![图片](https://img-blog.csdnimg.cn/20200717110815407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tvdWZ1bG9uZw==,size_16,color_FFFFFF,t_70,#pic_center=375x800)
-![图片](https://img-blog.csdnimg.cn/2020071711082297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tvdWZ1bG9uZw==,size_16,color_FFFFFF,t_70,#pic_center=375x800)
+![图片](https://img-blog.csdnimg.cn/20200717153517942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tvdWZ1bG9uZw==,size_16,color_FFFFFF,t_70,#pic_center=375x800)
+![图片](https://img-blog.csdnimg.cn/20200717153527309.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tvdWZ1bG9uZw==,size_16,color_FFFFFF,t_70,#pic_center=375x800)
