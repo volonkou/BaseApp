@@ -10,7 +10,7 @@ class ClassifyPage extends Component {
     render() {
         NavigationUtil.navigation = this.props.navigation;
         return <View style={[styles.container,{backgroundColor:this.props.theme.themeColor}]}>
-                <Text style={{color:"#fff"}}>ClassifyPage</Text>
+                <Text style={{color:"#fff"}}>{this.props.language.tab2}</Text>
             </View>
     }
 }
@@ -18,6 +18,7 @@ class ClassifyPage extends Component {
 
 const mapStateToProps = state => ({
     theme: state.theme.theme,
+    language:state.language.language,
 });
 
 

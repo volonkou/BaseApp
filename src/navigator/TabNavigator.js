@@ -17,7 +17,6 @@ const TABS = {//在这里配置页面的路由
     HomePage: {
         screen: HomePage,
         navigationOptions: {
-            tabBarLabel: "首页",
             tabBarIcon: ({tintColor}) => (
                 <MaterialIcons
                     name={'home'}
@@ -31,7 +30,6 @@ const TABS = {//在这里配置页面的路由
         {
             screen: ClassifyPage,
             navigationOptions: {
-                tabBarLabel: "分类",
                 tabBarIcon: ({tintColor}) => (
                     <Ionicons
                         name={'md-list'}
@@ -45,7 +43,6 @@ const TABS = {//在这里配置页面的路由
     FavoritePage: {
         screen: FavoritePage,
         navigationOptions: {
-            tabBarLabel: "收藏",
             tabBarIcon: ({tintColor}) => (
                 <MaterialIcons
                     name={'favorite'}
@@ -59,7 +56,6 @@ const TABS = {//在这里配置页面的路由
     MyPage: {
         screen: MyPage,
         navigationOptions: {
-            tabBarLabel: "我的",
             tabBarIcon: ({tintColor}) => (
                 <Entypo
                     name={'user'}
@@ -78,12 +74,18 @@ class TabNavigator extends Component {
     }
 
     _tabNavigator() {
-        if (this.Tabs) {
-            return this.Tabs;
-        }
+        // if (this.Tabs) {
+        //     return this.Tabs;
+        // }
+        const {language}=this.props
         const {HomePage, ClassifyPage, FavoritePage, MyPage} = TABS;
-        const tabs = {HomePage, ClassifyPage, FavoritePage, MyPage};//根据需要定制显示的tab
-        // HomePage.navigationOptions.tabBarLabel = '首页';//动态配置Tab属性
+        const tabs = {HomePage, ClassifyPage, FavoritePage, MyPage};
+        HomePage.navigationOptions.tabBarLabel = language.tab1;
+        ClassifyPage.navigationOptions.tabBarLabel = language.tab2;
+        FavoritePage.navigationOptions.tabBarLabel = language.tab3;
+        MyPage.navigationOptions.tabBarLabel = language.tab4;
+      
+        
         return this.Tabs = createAppContainer(createBottomTabNavigator(tabs, {
                 tabBarComponent: props => {
                     return <TabBarComponent theme={this.props.theme} {...props}/>
@@ -96,7 +98,7 @@ class TabNavigator extends Component {
         const Tab = this._tabNavigator();
         return <Tab
             onNavigationStateChange={(prevState, newState, action) => {
-                EventBus.getInstance().fireEvent(EventTypes.bottom_tab_select, {//发送底部tab切换的事件
+                EventBus.getInstance().fireEvent(EventTypes.bottom_tab_select, {
                     from: prevState.index,
                     to: newState.index
                 })
@@ -124,6 +126,7 @@ class TabBarComponent extends React.Component {
 
 const mapStateToProps = state => ({
     theme:state.theme.theme,
+    language:state.language.language,
 });
 
 export default connect(mapStateToProps)(TabNavigator);

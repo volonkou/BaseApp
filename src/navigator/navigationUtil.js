@@ -1,6 +1,6 @@
 
 export default class NavigationUtil {
-    static goPage(params, page) {
+    static goPage(params,page) {
         const navigation = NavigationUtil.navigation;
         if (!navigation) {
             return;

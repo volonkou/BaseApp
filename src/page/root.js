@@ -4,6 +4,8 @@ import SafeAreaViewPlus from "../common/SafeAreaViewPlus";
 import TabNavigator from "../navigator/TabNavigator"
 import actions from "../action"
 import Theme from "./theme"
+import Language from "./language"
+import Login from "./login"
 import { connect } from 'react-redux';
 
 class RootPage extends Component {
@@ -11,7 +13,7 @@ class RootPage extends Component {
         super(props);
     }
 
-    renderThemeView (){
+    renderThemeView() {
         const { customThemeViewVisible, onShowCustomThemeView } = this.props
         return (
             <Theme
@@ -21,13 +23,35 @@ class RootPage extends Component {
             />
         )
     }
+    renderLanguageView() {
+        const { customLanguageViewVisible, onShowCustomLanguageView } = this.props
+        return (
+            <Language
+                visible={customLanguageViewVisible}
+                {...this.props}
+                onClose={() => onShowCustomLanguageView(false)}
+            />
+        )
+    }
+
+    renderLoginView() {
+        const { customLoginViewVisible } = this.props
+        return (
+            <Login
+                visible={customLoginViewVisible}
+                {...this.props}
+            />
+        )
+    }
 
     render() {
         NavigationUtil.navigation = this.props.navigation;
-        const {theme} = this.props;
+        const { theme } = this.props;
         return <SafeAreaViewPlus topColor={theme.themeColor}>
-            <TabNavigator/>
+            <TabNavigator />
+            {this.renderLoginView()}
             {this.renderThemeView()}
+            {this.renderLanguageView()}
         </SafeAreaViewPlus>
     }
 }
@@ -36,13 +60,17 @@ class RootPage extends Component {
 const mapStateToProps = state => ({
     nav: state.nav,
     customThemeViewVisible: state.theme.customThemeViewVisible,
-    theme: state.theme.theme
+    customLanguageViewVisible: state.language.customLanguageViewVisible,
+    theme: state.theme.theme,
+    customLoginViewVisible: state.login.customLoginViewVisible
 })
 
 
 
 const mapDispatchToProps = dispatch => ({
-    onShowCustomThemeView: (show) => dispatch(actions.onShowCustomThemeView(show))
+    onShowCustomThemeView: (show) => dispatch(actions.onShowCustomThemeView(show)),
+    onShowCustomLanguageView: (show) => dispatch(actions.onShowCustomLanguageView(show)),
+    onShowLoginView: (show) => dispatch(actions.onShowLoginView(show)),
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(RootPage)
+export default connect(mapStateToProps, mapDispatchToProps)(RootPage)

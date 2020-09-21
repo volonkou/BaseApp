@@ -5,16 +5,19 @@ import RootPage from "../page/root"
 import { connect } from 'react-redux';
 import { createReactNavigationReduxMiddleware, createReduxContainer } from 'react-navigation-redux-helpers';
 
-export const rootCom = 'Init';//设置根路由，对应RootNavigator中第一个初始化的路由名
+export const rootCom = 'Init';
 
 const InitNavigator = createStackNavigator({
     WelcomePage: {
         screen: WelcomePage,
         navigationOptions: {
-            headerShown: false,// 可以通过将headerShown设为null 来禁用StackNavigator的Navigation Bar
+            headerShown: false,
         },
     },
 });
+
+
+
 
 const MainNavigator = createStackNavigator({
     RootPage: {
@@ -41,14 +44,12 @@ export const RootNavigator = createAppContainer(createSwitchNavigator({
 }));
 
 
-// 初始化react-navigation与redux的中间件，作用就是为createReduxContainer的key设置actionSubscribers(行为订阅者)
 export const middleware = createReactNavigationReduxMiddleware(
     state => state.nav,
     'root',
 );
 
 
-// 将根导航器组件传递给 createReduxContainer 函数,
 const AppWithNavigationState = createReduxContainer(RootNavigator, 'root');
 
 

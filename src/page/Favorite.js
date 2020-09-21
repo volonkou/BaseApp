@@ -10,7 +10,7 @@ class FavoritePage extends Component {
     render() {
         NavigationUtil.navigation = this.props.navigation;
         return <View style={[styles.container,{backgroundColor:this.props.theme.themeColor}]}>
-                <Text style={{color:"#fff"}}>FavoritePage</Text>
+                <Text style={{color:"#fff"}}>{this.props.language.tab3}</Text>
             </View>
     }
 }
@@ -18,6 +18,7 @@ class FavoritePage extends Component {
 
 const mapStateToProps = state => ({
     theme: state.theme.theme,
+    language:state.language.language,
 });
 
 
